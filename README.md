@@ -1,12 +1,28 @@
-Jenkinsfile (Declarative Pipeline)
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.9.8-eclipse-temurin-21-alpine' } }
+    agent any
+
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'mvn --version'
+                echo 'Building...'
+                // Add your build commands here, e.g., compile code
+                // sh 'make' or sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Add your test commands here, e.g., run unit tests
+                // sh 'make test' or sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add your deployment commands here, e.g., deploy to server
+                // sh 'scp target/*.jar user@server:/path/to/deploy'
             }
         }
     }
 }
+
