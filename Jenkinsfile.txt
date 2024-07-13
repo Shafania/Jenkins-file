@@ -1,0 +1,23 @@
+stages {
+    stage('Build') {
+        steps {
+            echo 'Building...'
+            // Add your build commands here, e.g., compile code
+            // sh 'make' or sh 'npm install'
+        }
+    }
+    stage('Test') {
+        steps {
+            echo 'Testing...'
+            // Add your test commands here, e.g., run unit tests
+            // sh 'make test' or sh 'npm test'
+        }
+    }
+    stage('Deploy') {
+        steps {
+            echo 'Deploying...'
+            // Add your deployment commands here, e.g., deploy to server
+            // sh 'scp target/*.jar user@server:/path/to/deploy'
+        }
+    }
+}
